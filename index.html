@@ -1,1 +1,432 @@
-<h1>Hello world!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Antonio Pace — Senior Android developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f0f4f7;
+      --surface: #ffffff;
+      --text: #1a1a18;
+      --muted: #6b6b63;
+      --accent: #2c5f8a;
+      --accent-light: #e8f0f8;
+      --border: #e2dfd8;
+      --tag-bg: #edf2f7;
+      --tag-text: #2c5f8a;
+    }
+
+    body {
+      font-family: 'Baloo 2', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    header {
+      background: var(--text);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 2rem 2.5rem;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'Baloo 2', serif;
+      font-size: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+    }
+
+    header h1 {
+      font-family: 'Baloo 2', serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      letter-spacing: -0.5px;
+      color: var(--surface);
+    }
+
+    header p {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-top: 0.4rem;
+    }
+
+    .contact-row {
+      margin-top: 1.25rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-row a {
+      font-size: 0.875rem;
+      color: var(--accent);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      background: var(--accent-light);
+      transition: background 0.15s;
+    }
+
+    .contact-row a:hover { background: #d0e3f3; }
+
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    .section-title {
+      font-family: 'Baloo 2', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .app-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: box-shadow 0.15s, transform 0.15s;
+    }
+
+    .app-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+      transform: translateY(-2px);
+    }
+
+    .app-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .app-card-header img {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+
+    .app-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .app-card-header img {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+
+    .app-card h3 {
+      font-size: 0.975rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .app-links {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
+
+    .btn {
+      font-size: 0.8rem;
+      font-family: 'DM Sans', sans-serif;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      color: var(--accent);
+      background: var(--accent-light);
+      transition: background 0.15s;
+    }
+
+    .btn:hover { background: #d0e3f3; }
+
+    .btn-play {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .btn-play:hover { background: #245077; }
+
+    .admob-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img class="avatar" src="https://media.licdn.com/dms/image/v2/D4D03AQGTBn3q1qoSHw/profile-displayphoto-shrink_200_200/B4DZXPOr6FHsAc-/0/1742938492039?e=1778716800&v=beta&t=snZLbkP-CakP48DiL2Sn2pho33gAJsyTI_roP4HWpF8" alt="Antonio Pace" style="width:64px;height:64px;object-fit:cover;" />
+  <h1>Antonio Pace</h1>
+  <p>Senior Android developer · Italy</p>
+  <div class="contact-row">
+    <a href="mailto:antn.pace@gmail.com">antn.pace@gmail.com</a>
+    <a href="https://play.google.com/store/apps/developer?id=Antonio+Pace" target="_blank">Google Play</a>
+    <a href="https://www.linkedin.com/in/antonio-pace/" target="_blank">LinkedIn</a>
+    <a href="https://sites.google.com/view/apace-dev/home" target="_blank">Google sites</a>
+  </div>
+</header>
+
+<main>
+  <h2 class="section-title">Highlighted</h2>
+  <div class="apps-grid"> 
+    <div class="app-card">
+      <div class="app-card-header">
+        <img src="https://play-lh.googleusercontent.com/1UznU5KcNotQVxVhe5cU9wIT_Z2YkqacMXp6e9CckslQp3Q4e_vg3QoYVJa-OCeor1S3lqyJLnzTq1K9-eHviA=s128" alt="CookstaVision icon" />
+        <h3>In season: fruit & vegetables - Mangiare di stagione</h3>
+      </div>
+      <div class="app-links">
+        <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=apace.seasonal" target="_blank">Play Store</a>
+        <a class="btn" href="https://sites.google.com/view/apace-dev/privacy/seasonal" target="_blank">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="app-card">
+      <div class="app-card-header">
+        <img src="https://play-lh.googleusercontent.com/yLa4e-fy5VuK5TC8P7uEJ7_z6UR7qG7ViJ-z-GlGjkNpUdNF8yF8bTarYViUeInLqsk=s128" alt="Coltiva in Armonia icon" />
+        <h3>Gardening with the moon - Coltivare in armonia con la luna</h3>
+      </div>
+      <div class="app-links">
+        <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=apace.coltivainarmonia" target="_blank">Play Store</a>
+        <a class="btn" href="https://sites.google.com/view/apace-dev/privacy/coltivare-con-la-luna" target="_blank">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="app-card">
+      <div class="app-card-header">
+        <img src="https://play-lh.googleusercontent.com/CjltOehNursT8GaGjo8fr2AM5-DIqc4EpSPQOo2pa2AdnDOWWtl_z_T_qgS0XnJjQCUDUQi-9f8ez87wc5iJXA=w52-h52" alt="CookstaVision icon" />
+        <h3>CookstaVision — Easy Recipes</h3>
+      </div>
+      <div class="app-links">
+        <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=apace.cookstavision" target="_blank">Play Store</a>
+        <a class="btn" href="https://sites.google.com/view/apace-dev/privacy/cookstavision" target="_blank">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">All apps</h2>
+  <div class="apps-grid">
+    <div class="app-card">
+      <div class="app-card-header">
+        <img src="https://play-lh.googleusercontent.com/1UznU5KcNotQVxVhe5cU9wIT_Z2YkqacMXp6e9CckslQp3Q4e_vg3QoYVJa-OCeor1S3lqyJLnzTq1K9-eHviA=s128" alt="CookstaVision icon" />
+        <h3>In season: fruit & vegetables - Mangiare di stagione</h3>
+      </div>
+      <div class="app-links">
+        <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=apace.seasonal" target="_blank">Play Store</a>
+        <a class="btn" href="https://sites.google.com/view/apace-dev/privacy/seasonal" target="_blank">Privacy Policy</a>
+      </div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-card-header">
+        <img src="https://play-lh.googleusercontent.com/CjltOehNursT8GaGjo8fr2AM5-DIqc4EpSPQOo2pa2AdnDOWWtl_z_T_qgS0XnJjQCUDUQi-9f8ez87wc5iJXA=w52-h52" alt="CookstaVision icon" />
+        <h3>CookstaVision — Easy Recipes</h3>
+      </div>
+      <div class="app-links">
+        <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=apace.cookstavision" target="_blank">Play Store</a>
+        <a class="btn" href="https://sites.google.com/view/apace-dev/privacy/cookstavision" target="_blank">Privacy Policy</a>
+      </div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-card-header">
+        <img src="https://play-lh.googleusercontent.com/mDzaV2swy2f0x1zfhMvn_5GI7GqHhePbB_ZsjQJ1Ok81Kyam0F4dd_ZURLgqLh-OAZw=s128" alt="Breast Self-Examination icon" />
+        <h3>Breast Self-Examination</h3>
+      </div>
+      <div class="app-links">
+        <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=apace.health.selfexamination" target="_blank">Play Store</a>
+        <a class="btn" href="https://sites.google.com/view/apace-dev/privacy/breast-self-examination" target="_blank">Privacy Policy</a>
+      </div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-card-header">
+        <img src="https://play-lh.googleusercontent.com/5QWsHJU8h_259tRzUBj8OM80ANrujtI5l3Muq5kylws56X9cB-lzXxUhFMdJU3i8eIM=s128" alt="Herbal Guide icon" />
+        <h3>Herbal Guide</h3>
+      </div>
+      <div class="app-links">
+        <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=apace.herbs" target="_blank">Play Store</a>
+        <a class="btn" href="https://sites.google.com/view/apace-dev/privacy/guida-alle-erbe" target="_blank">Privacy Policy</a>
+      </div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-card-header">
+        <img src="https://play-lh.googleusercontent.com/HwF2yNJxOMrQrTcz7mbLff5NRN6e5_ZQqkwqmYXHA4U6n9AlZBig2IzpkpuM16D5bQ=s128" alt="FTT icon" />
+        <h3>FTT: Freelance Time Tracker</h3>
+      </div>
+      <div class="app-links">
+        <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=apace.freelancetimetracker" target="_blank">Play Store</a>
+        <a class="btn" href="https://sites.google.com/view/apace-dev/privacy/ftt-freelance-time-tracker" target="_blank">Privacy Policy</a>
+      </div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-card-header">
+        <img src="https://play-lh.googleusercontent.com/ghZdrWIgqxqOvLwpDp9mWK6dENsHmvEWQg9lqwYDyfLs83ySPCztps9ySMm5h1p_wgM=s128" alt="Wacky Volleyball icon" />
+        <h3>Wacky Volleyball</h3>
+      </div>
+      <div class="app-links">
+        <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=wacky.volleyball" target="_blank">Play Store</a>
+        <a class="btn" href="https://sites.google.com/view/apace-dev/privacy/wacky-volleyball" target="_blank">Privacy Policy</a>
+      </div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-card-header">
+        <img src="https://play-lh.googleusercontent.com/i1BOnw4Q0igzf4ZdEMjsraUUz6Yqs3S2xGtCn1ply6flRqU2hOOHijHkLXeJKrFt8gSw=s128" alt="WakeMeUp icon" />
+        <h3>WakeMeUp!</h3>
+      </div>
+      <div class="app-links">
+        <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=apace.wakemeup" target="_blank">Play Store</a>
+        <a class="btn" href="https://sites.google.com/view/apace-dev/privacy/svegliami-sveglia-maledetta" target="_blank">Privacy Policy</a>
+      </div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-card-header">
+        <img src="https://play-lh.googleusercontent.com/lzcFL9EyMB9VKxlXI7ddPyPzYppf1gCFBny4X7GacvUZwQULtLrjqTJgyCghppNhfw=s128" alt="FILO icon" />
+        <h3>FILO: Puzzle di Parole</h3>
+      </div>
+      <div class="app-links">
+        <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=apace.filo" target="_blank">Play Store</a>
+        <a class="btn" href="https://sites.google.com/view/apace-dev/privacy/filo-puzzle-di-parole" target="_blank">Privacy Policy</a>
+      </div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-card-header">
+        <img src="https://play-lh.googleusercontent.com/rHoUXTkgSrNJ8OewhM0LciUIAazjkSGObP8HQQ1-w8UYJN9o2ZdUzqvT8FyqhRKdwto=s128" alt="Indicazioni Nazionali Infanzia icon" />
+        <h3>Indicazioni Nazionali — Infanzia</h3>
+      </div>
+      <div class="app-links">
+        <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=apace.indicazioninazionali.infanzia" target="_blank">Play Store</a>
+        <a class="btn" href="https://sites.google.com/view/apace-dev/privacy/indicazioni-nazionali-infanzia" target="_blank">Privacy Policy</a>
+      </div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-card-header">
+        <img src="https://play-lh.googleusercontent.com/JXZRfxds1HAahNuZqnNqZKL0pWeGDbdmkTEBkJpTN1YpFZLrzKhyQsthjT_HbnWjRmQ=s128" alt="Indicazioni Nazionali Primaria icon" />
+        <h3>Indicazioni Nazionali — Primaria</h3>
+      </div>
+      <div class="app-links">
+        <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=apace.indicazioninazionali.primaria" target="_blank">Play Store</a>
+        <a class="btn" href="https://sites.google.com/view/apace-dev/privacy/indicazioni-nazionali-primaria" target="_blank">Privacy Policy</a>
+      </div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-card-header">
+        <img src="https://play-lh.googleusercontent.com/9PSR9I3wr4mAZ6pDHsg2NE4TqXBISK_7TYDRjo-MQYRvWWBHvcSGgpc3WFk_5K-32TA=s128" alt="Indicazioni Nazionali Secondaria icon" />
+        <h3>Indicazioni Nazionali — Secondaria</h3>
+      </div>
+      <div class="app-links">
+        <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=apace.indicazioninazionali.secondaria" target="_blank">Play Store</a>
+        <a class="btn" href="https://sites.google.com/view/apace-dev/privacy/indicazioni-nazionali-secondaria" target="_blank">Privacy Policy</a>
+      </div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-card-header">
+        <img src="https://play-lh.googleusercontent.com/5tWLIxPHH50thDu8BX6HfzeM8dfWXwLwzsMpDYQCbh1ughR6jdfihqNdFJRUMa7QYsVH=s128" alt="Sommelier icon" />
+        <h3>Sommelier</h3>
+      </div>
+      <div class="app-links">
+        <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=apace.sommelier" target="_blank">Play Store</a>
+        <a class="btn" href="https://sites.google.com/view/apace-dev/privacy/sommelier-vini-ditalia" target="_blank">Privacy Policy</a>
+      </div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-card-header">
+        <img src="https://play-lh.googleusercontent.com/tRpeUmE7253YR-qCPtIZf7ld0VVQd0VP29Ba9PnFQ1fYIOLblZ5RSaaIYWjPCjkeHlFg=s128" alt="My Medical Reports icon" />
+        <h3>My Medical Reports</h3>
+      </div>
+      <div class="app-links">
+        <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=apace.mymedicalreports" target="_blank">Play Store</a>
+        <a class="btn" href="https://sites.google.com/view/apace-dev/privacy/archivio-medico" target="_blank">Privacy Policy</a>
+      </div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-card-header">
+        <img src="https://play-lh.googleusercontent.com/yLa4e-fy5VuK5TC8P7uEJ7_z6UR7qG7ViJ-z-GlGjkNpUdNF8yF8bTarYViUeInLqsk=s128" alt="Coltiva in Armonia icon" />
+        <h3>Gardening with the moon - Coltivare in armonia con la luna</h3>
+      </div>
+      <div class="app-links">
+        <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=apace.coltivainarmonia" target="_blank">Play Store</a>
+        <a class="btn" href="https://sites.google.com/view/apace-dev/privacy/coltivare-con-la-luna" target="_blank">Privacy Policy</a>
+      </div>
+    </div>
+
+    <div class="app-card">
+      <div class="app-card-header">
+        <img src="https://play-lh.googleusercontent.com/H5JW-QKMF1vsPnBJLYBy3suJfD1TfqOYcrjVuODiAlYIvOd41GkO4ifc5xAB29aYCA=s128" alt="Cosa Mangio Oggi icon" />
+        <h3>What do I eat today - Cosa Mangio Oggi</h3>
+      </div>
+      <div class="app-links">
+        <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=apace.cosamangiooggi" target="_blank">Play Store</a>
+        <a class="btn" href="https://sites.google.com/view/apace-dev/privacy/cosa-mangio-oggi" target="_blank">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  &copy; 2026 Antonio Pace
+</footer>
+
+</body>
+</html>
